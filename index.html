@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zu_NaDi | Mobile & Software Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #090e1a;
+      --bg-secondary: #0f172a;
+      --bg-card: rgba(20, 28, 48, 0.72);
+      --bg-card-hover: rgba(30, 42, 70, 0.9);
+      --border-color: rgba(148, 163, 184, 0.12);
+      --border-accent: rgba(56, 189, 248, 0.45);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #3b82f6;
+      --accent-purple: #a855f7;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --badge-bg: rgba(56, 189, 248, 0.08);
+      --badge-border: rgba(56, 189, 248, 0.22);
+      --card-radius: 16px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 12% 12%, rgba(56, 189, 248, 0.09) 0%, transparent 40%),
+        radial-gradient(circle at 88% 28%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(9, 14, 26, 0.88);
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 74px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+    }
+
+    .brand-info h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-info span {
+      font-size: 0.78rem;
+      color: var(--accent-cyan);
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .btn-personal-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .btn-personal-github:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-cyan);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
+    }
+
+    .btn-personal-github svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 72px 0 44px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 999px;
+      color: var(--accent-emerald);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #38bdf8 15%, #818cf8 50%, #c084fc 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-sub);
+      max-width: 740px;
+      margin: 0 auto 36px;
+      line-height: 1.68;
+    }
+
+    .hero-ctas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: var(--accent-cyan);
+      color: #07101f;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: var(--transition);
+      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    /* Key Numbers Bar */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-3px);
+    }
+
+    .stat-num {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* About Section */
+    .about-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 36px 32px;
+      margin-bottom: 72px;
+      backdrop-filter: blur(12px);
+    }
+
+    .about-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .about-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .about-text {
+      color: var(--text-sub);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .about-pill-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .about-pill-box h4 {
+      font-size: 0.95rem;
+      color: var(--accent-cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .about-pill-box p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    /* Experience Section */
+    .experience-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 36px 32px;
+      margin-bottom: 72px;
+      backdrop-filter: blur(12px);
+    }
+
+    .experience-card {
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 24px;
+      transition: var(--transition);
+    }
+
+    .experience-card:hover {
+      border-color: var(--border-accent);
+      background: rgba(0, 0, 0, 0.38);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .exp-company-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .exp-logo-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .exp-role {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .exp-company {
+      font-size: 0.88rem;
+      color: var(--accent-cyan);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .exp-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .exp-pill {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+    }
+
+    .exp-summary {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .exp-achievements {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 0.86rem;
+      color: var(--text-sub);
+    }
+
+    .exp-achievements strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-main);
+    }
+
+    .exp-achievements ul {
+      padding-left: 18px;
+    }
+
+    .exp-achievements li {
+      margin-bottom: 6px;
+      line-height: 1.55;
+    }
+
+    .btn-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #0a66c2;
+      border: 1px solid #0a66c2;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .btn-linkedin:hover {
+      background: #004182;
+      border-color: #004182;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(10, 102, 194, 0.4);
+    }
+
+    .btn-linkedin svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Filter & Search Bar */
+    .filter-wrapper {
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent-cyan);
+      color: #07101f;
+      border-color: var(--accent-cyan);
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    }
+
+    .search-box {
+      max-width: 520px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 18px 12px 42px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      color: var(--text-main);
+      font-size: 0.92rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-cyan);
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Section Title */
+    .section-header {
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+      backdrop-filter: blur(12px);
+    }
+
+    .project-card:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      border-color: var(--border-accent);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .category-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .cat-mobile {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+    }
+
+    .cat-ai {
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      color: #c084fc;
+    }
+
+    .cat-cloud {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+    }
+
+    .cat-tool {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #fbbf24;
+    }
+
+    .project-repo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.74rem;
+      font-family: 'JetBrains Mono', monospace;
+      transition: var(--transition);
+    }
+
+    .project-repo-link:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: scale(1.03);
+    }
+
+    .project-repo-link svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    .project-name {
+      font-size: 1.28rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .project-tagline {
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 10px;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.58;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .project-highlights {
+      background: rgba(0, 0, 0, 0.22);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    .project-highlights strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-main);
+    }
+
+    .project-highlights ul {
+      padding-left: 16px;
+    }
+
+    .project-highlights li {
+      margin-bottom: 4px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .tech-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--accent-cyan);
+    }
+
+    /* Skills Section */
+    .skills-section {
+      background: var(--bg-secondary);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-color);
+      padding: 40px 32px;
+      margin-bottom: 72px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .skill-card {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 22px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .skill-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      font-size: 0.84rem;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
+      border: 1px solid var(--border-color);
+      border-radius: var(--card-radius);
+      padding: 48px 32px;
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .contact-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .contact-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        height: auto;
+        padding: 16px 0;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .nav-menu {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="brand-link">
+        <div class="brand-avatar">ZN</div>
+        <div class="brand-info">
+          <h1>Zu_NaDi</h1>
+          <span>Mobile & Software Engineer &bull; Myanmar</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects (<span id="projectCount">20+</span>)</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <!-- LinkedIn Profile Link -->
+          <a href="https://www.linkedin.com/in/zu-nadi-035548229/" target="_blank" rel="noopener noreferrer" class="btn-linkedin" title="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <!-- ONLY Personal GitHub Account Link as specified -->
+          <a href="https://github.com/Zu-Nadi" target="_blank" rel="noopener noreferrer" class="btn-personal-github" title="Personal GitHub Account">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            github.com/Zu-Nadi
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="dot"></span> Mobile & Flutter Developer &bull; Myanmar (Min Shin Saw)
+      </div>
+      <h1 class="hero-title">
+        Crafting High-Performance Mobile Apps <br>
+        <span class="hero-gradient">& Modern System Architectures</span>
+      </h1>
+      <p class="hero-desc">
+        Specializing in production Flutter/Dart and Kotlin mobile development, Firebase Cloud Messaging (FCM) push notifications, 
+        AI-assisted media platforms, and automated developer systems.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">Explore All Repositories &rarr;</a>
+        <!-- LinkedIn CTA Button -->
+        <a href="https://www.linkedin.com/in/zu-nadi-035548229/" target="_blank" rel="noopener noreferrer" class="btn-linkedin" style="padding: 12px 24px; font-size: 0.95rem;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn Profile
+        </a>
+        <!-- Personal GitHub Link only -->
+        <a href="https://github.com/Zu-Nadi" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          Personal Profile (@Zu-Nadi)
+        </a>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Repositories & Systems</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">Flutter & Kotlin</div>
+          <div class="stat-label">Core Mobile Languages</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">FCM & Push</div>
+          <div class="stat-label">Cloud Messaging Lifecycle</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">AI & Media</div>
+          <div class="stat-label">Video & Audio Engines</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="about-header">
+        <span style="font-size: 1.5rem;">👨‍💻</span>
+        <h2>About Me</h2>
+      </div>
+      <p class="about-text">
+        I am a mobile and software developer based in Myanmar working at Min Shin Saw (MSS). My primary focus is building smooth, 
+        responsive, and production-tested applications with <strong>Flutter, Dart, and Kotlin</strong>. 
+        My projects span educational platforms (NaviEd), school ecosystem mobile apps (EDUplus), personal hologram assistants (HoloLife), 
+        AI-powered image-to-video editing tools, and robust cloud push notification systems with <strong>Firebase Cloud Messaging (FCM)</strong>.
+      </p>
+
+      <div class="about-highlights">
+        <div class="about-pill-box">
+          <h4>📱 Mobile & Android</h4>
+          <p>End-to-end development in Flutter & Kotlin: UI design, local databases, isolated theming, and production release packaging.</p>
+        </div>
+        <div class="about-pill-box">
+          <h4>🔔 Cloud Messaging & FCM</h4>
+          <p>Foreground & background push handlers, token lifecycle sync, and local chat mobile push dispatching.</p>
+        </div>
+        <div class="about-pill-box">
+          <h4>🤖 AI & Multimedia</h4>
+          <p>Exploration of image-to-video generation, AI audio radio streaming, and autonomous engineering brain architecture.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section (From LinkedIn) -->
+    <section id="experience" class="experience-section">
+      <div class="section-header" style="margin-bottom: 24px;">
+        <div>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-desc">Career milestones and enterprise mobile engineering roles verified on LinkedIn.</p>
+        </div>
+        <a href="https://www.linkedin.com/in/zu-nadi-035548229/" target="_blank" rel="noopener noreferrer" class="btn-linkedin" style="font-size: 0.84rem; padding: 6px 14px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          View Full LinkedIn Profile &rarr;
+        </a>
+      </div>
+
+      <div class="experience-card">
+        <div class="exp-header">
+          <div class="exp-company-block">
+            <div class="exp-logo-box">MSS</div>
+            <div>
+              <h3 class="exp-role">Mobile Application Developer</h3>
+              <div class="exp-company">Min Shin Saw (MSS) &bull; Full-time (Present)</div>
+            </div>
+          </div>
+          <div class="exp-badge">
+            <span style="font-weight: 600; color: var(--text-main);">Yangon, Myanmar</span>
+            <span class="exp-pill" style="background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.3); color: var(--accent-cyan);">Current &bull; Present</span>
+          </div>
+        </div>
+
+        <p class="exp-summary">
+          Leading and contributing to the design, architectural steering, and development of cross-platform 
+          mobile applications with Flutter, Dart, and Android SDK, delivering high-reliability client solutions across telecommunications and education.
+        </p>
+
+        <div class="exp-achievements">
+          <strong>Key Engineering Responsibilities & Impact:</strong>
+          <ul>
+            <li><strong>Enterprise Education Mobile Suite (EDUplus):</strong> Architected and built the EDUplus school management platform (Guardian, Teacher, and Student applications), enabling real-time attendance management, classroom administration, and parent-teacher communication.</li>
+            <li><strong>Dynamic Domain Theming Isolation:</strong> Engineered custom school domain dynamic styling (e.g. Avocado Green theme) with complete theme isolation, preventing color bleeding into default application flows.</li>
+            <li><strong>Cloud Push Notification Architecture (FCM):</strong> Designed end-to-end Firebase Cloud Messaging infrastructure handling foreground/background push dispatch, token lifecycle refreshes, and local chat notifications.</li>
+            <li><strong>Reactive State & Networking:</strong> Integrated Flutter Riverpod and Provider with Dio REST clients, automated error interceptors, and resilient local data persistence.</li>
+            <li><strong>Production Release Automation:</strong> Built signed production Android App Bundles (app-release.aab) and iOS Runner configurations with clean build checks and zero regressions.</li>
+          </ul>
+        </div>
+
+        <div class="project-tags" style="margin-top: 18px;">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Dart</span>
+          <span class="tech-tag">Kotlin / Android</span>
+          <span class="tech-tag">Firebase FCM</span>
+          <span class="tech-tag">Riverpod</span>
+          <span class="tech-tag">Dio REST API</span>
+          <span class="tech-tag">App Bundle (AAB)</span>
+          <span class="tech-tag">Clean Architecture</span>
+        </div>
+      </div>
+
+      <!-- Previous Experience: GTG -->
+      <div class="experience-card" style="margin-top: 24px; border-left: 3px solid rgba(148, 163, 184, 0.4);">
+        <div class="exp-header">
+          <div class="exp-company-block">
+            <div class="exp-logo-box" style="background: linear-gradient(135deg, #475569, #64748b);">GTG</div>
+            <div>
+              <h3 class="exp-role">Junior Mobile Application Developer</h3>
+              <div class="exp-company" style="color: var(--text-muted);">Global Technology Group (GTG) &bull; Full-time</div>
+            </div>
+          </div>
+          <div class="exp-badge">
+            <span style="font-weight: 600; color: var(--text-muted);">Yangon, Myanmar</span>
+            <span class="exp-pill" style="background: rgba(148, 163, 184, 0.12); border-color: rgba(148, 163, 184, 0.25); color: var(--text-sub);">Previous Experience</span>
+          </div>
+        </div>
+
+        <p class="exp-summary">
+          Contributed to cross-platform mobile application development for enterprise client solutions and telecommunication digital services using Flutter and Dart.
+        </p>
+
+        <div class="exp-achievements">
+          <strong>Key Engineering Responsibilities:</strong>
+          <ul>
+            <li><strong>Cross-Platform Mobile Features:</strong> Built dynamic UI screens and reusable widgets matching pixel-perfect design specifications for Android and iOS clients.</li>
+            <li><strong>REST API Integration:</strong> Integrated backend endpoints, handled JSON data serialization, and implemented secure credential storage.</li>
+            <li><strong>Version Control & Team Collaboration:</strong> Managed feature branches, conducted routine bug fixing, and collaborated with cross-functional engineering teams.</li>
+          </ul>
+        </div>
+
+        <div class="project-tags" style="margin-top: 18px;">
+          <span class="tech-tag" style="color: var(--text-sub); border-color: rgba(255, 255, 255, 0.1);">Flutter</span>
+          <span class="tech-tag" style="color: var(--text-sub); border-color: rgba(255, 255, 255, 0.1);">Dart</span>
+          <span class="tech-tag" style="color: var(--text-sub); border-color: rgba(255, 255, 255, 0.1);">Mobile UI</span>
+          <span class="tech-tag" style="color: var(--text-sub); border-color: rgba(255, 255, 255, 0.1);">REST APIs</span>
+          <span class="tech-tag" style="color: var(--text-sub); border-color: rgba(255, 255, 255, 0.1);">Git Workflow</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">All Project Repositories</h2>
+          <p class="section-desc">Complete index of public and private repositories across <code>Zu-Nadi</code> and <code>mss-zu</code>.</p>
+        </div>
+      </div>
+
+      <!-- Filters & Search -->
+      <div class="filter-wrapper">
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Repositories (<span id="totalTabCount">20</span>)</button>
+          <button class="filter-btn" data-filter="mobile">📱 Mobile & Android</button>
+          <button class="filter-btn" data-filter="ai">🤖 AI & Multimedia</button>
+          <button class="filter-btn" data-filter="cloud">🔥 Cloud & Backend</button>
+          <button class="filter-btn" data-filter="tool">🛠️ Tools & DevOps</button>
+        </div>
+
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search by name, tech (Flutter, Kotlin, FCM, Riverpod, AI, Video)...">
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projectsContainer">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="skills-section">
+      <h2 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 6px;">Technical Stack & Architecture</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Technologies, frameworks, and developer tooling verified across production applications.</p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>📱 Mobile & Android</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Flutter 3.x</span>
+            <span class="skill-pill">Dart 3.x</span>
+            <span class="skill-pill">Kotlin / Android SDK</span>
+            <span class="skill-pill">Android Gradle / AAB</span>
+            <span class="skill-pill">iOS CocoaPods</span>
+            <span class="skill-pill">Material 3 / Cupertino</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4>⚡ State & Networking</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Flutter Riverpod</span>
+            <span class="skill-pill">Provider</span>
+            <span class="skill-pill">Dio REST Client</span>
+            <span class="skill-pill">Clean Architecture</span>
+            <span class="skill-pill">Offline Caching</span>
+            <span class="skill-pill">TypeScript / PHP API</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4>🔥 Cloud & Messaging</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Firebase Cloud Messaging (FCM)</span>
+            <span class="skill-pill">Firebase Auth</span>
+            <span class="skill-pill">Cloud Firestore</span>
+            <span class="skill-pill">Push Token Lifecycle</span>
+            <span class="skill-pill">Local Chat Notifications</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h4>🛠️ Tooling, AI & DevOps</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Codemagic CI/CD</span>
+            <span class="skill-pill">Git Workflows</span>
+            <span class="skill-pill">AI Media Remixing</span>
+            <span class="skill-pill">Camera QR Scanner</span>
+            <span class="skill-pill">Unum Agent Framework</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2 class="contact-title">Let's Connect</h2>
+      <p class="contact-desc">
+        Interested in mobile application engineering, Flutter development, or collaboration? 
+        Connect with me on LinkedIn or visit my personal GitHub repository profile.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <!-- LinkedIn CTA Button -->
+        <a href="https://www.linkedin.com/in/zu-nadi-035548229/" target="_blank" rel="noopener noreferrer" class="btn-linkedin" style="font-size: 1rem; padding: 12px 26px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          Connect on LinkedIn
+        </a>
+        <!-- ONLY Personal GitHub Account Link as specified -->
+        <a href="https://github.com/Zu-Nadi" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 1rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          Visit Personal GitHub: @Zu-Nadi
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/zu-nadi-035548229/" target="_blank" rel="noopener noreferrer" style="color: var(--text-sub); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <span style="color: var(--border-color);">&bull;</span>
+        <a href="https://github.com/Zu-Nadi" target="_blank" rel="noopener noreferrer" style="color: var(--text-sub); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          github.com/Zu-Nadi
+        </a>
+      </div>
+      <p>&copy; 2026 Zu_NaDi (Zuu Nadi). Built with precision &bull; Complete Verified Inventory</p>
+    </div>
+  </footer>
+
+  <script>
+    // FULL COMPREHENSIVE REPOSITORY INDEX (All Zu-Nadi Public + Private Repos, and mss-zu Repos)
+    const projects = [
+      // 1. HoloLife (Zu-Nadi)
+      {
+        id: "hololife",
+        name: "HoloLife Assistant",
+        repoSlug: "Zu-Nadi/HoloLife",
+        repoUrl: "https://github.com/Zu-Nadi/HoloLife",
+        tagline: "Personal Assistant Hologram Android Application",
+        category: "mobile",
+        categoryLabel: "Kotlin / Android",
+        categoryClass: "cat-mobile",
+        description: "Innovative personal assistant hologram application built natively in Kotlin for Android devices.",
+        highlights: [
+          "Native Kotlin architecture optimized for Android execution",
+          "Voice/visual assistant interface and hologram animation rendering",
+          "Background processing and proactive daily assistance loop"
+        ],
+        tags: ["Kotlin", "Android SDK", "Personal Assistant", "Hologram UI"]
+      },
+      // 2. Plan (Zu-Nadi)
+      {
+        id: "plan-app",
+        name: "Plan (Future Planning App)",
+        repoSlug: "Zu-Nadi/Plan",
+        repoUrl: "https://github.com/Zu-Nadi/Plan",
+        tagline: "Future Milestone Tracking & Goal Management System",
+        category: "mobile",
+        categoryLabel: "Kotlin / Android",
+        categoryClass: "cat-mobile",
+        description: "Milestone management application designed for setting, tracking, and completing long-term personal and professional goals.",
+        highlights: [
+          "Native Android Kotlin codebase with clean local persistence",
+          "Interactive timeline tracking and milestone progress visualization",
+          "Compiled and packaged into release APKs for production use"
+        ],
+        tags: ["Kotlin", "Android", "Task Management", "Milestones", "APK Release"]
+      },
+      // 3. NaviEd (Zu-Nadi & mss-zu)
+      {
+        id: "navied-main",
+        name: "NaviEd Mobile Platform",
+        repoSlug: "mss-zu/NaviEd-main",
+        repoUrl: "https://github.com/mss-zu/NaviEd-main",
+        tagline: "School & University Campus Navigation Directory",
+        category: "mobile",
+        categoryLabel: "Flutter Mobile",
+        categoryClass: "cat-mobile",
+        description: "Navigation directory and learning companion mobile application designed for school campuses, courses, and student onboarding.",
+        highlights: [
+          "Reactive state management powered by Riverpod and Provider",
+          "Optimized REST networking using Dio with custom interceptors and caching",
+          "Interactive onboarding coachmarks (ShowcaseView / TutorialCoachMark) and Lottie rich animations"
+        ],
+        tags: ["Flutter", "Dart", "Riverpod", "Dio", "Lottie", "ShowcaseView"]
+      },
+      // 4. Firebase-Token (Zu-Nadi)
+      {
+        id: "firebase-token",
+        name: "Firebase-Token Integration",
+        repoSlug: "Zu-Nadi/Firebase-Token",
+        repoUrl: "https://github.com/Zu-Nadi/Firebase-Token",
+        tagline: "FCM Push Notifications & Cloud Auth Synchronization",
+        category: "cloud",
+        categoryLabel: "Cloud Messaging",
+        categoryClass: "cat-cloud",
+        description: "Production-grade push notification token management and cloud sync engine for mobile devices.",
+        highlights: [
+          "FCM foreground and background notification handlers with custom payload routing",
+          "Full cloud synchronization with Cloud Firestore and Firebase Auth",
+          "Android 13+ runtime notification permissions and auto-refresh token handling"
+        ],
+        tags: ["Flutter", "Firebase FCM", "Cloud Firestore", "Firebase Auth", "Push Messaging"]
+      },
+      // 5. QR_Scan (Zu-Nadi)
+      {
+        id: "qr-scan",
+        name: "QR_Scan Utility Engine",
+        repoSlug: "Zu-Nadi/QR_Scan",
+        repoUrl: "https://github.com/Zu-Nadi/QR_Scan",
+        tagline: "Camera QR/Barcode Scanner & Dynamic Code Generator",
+        category: "tool",
+        categoryLabel: "Mobile Utility",
+        categoryClass: "cat-tool",
+        description: "High-speed camera barcode and QR code scanner utility with dynamic QR image generation and HTTP payload dispatch.",
+        highlights: [
+          "Optimized live camera frame detection with error handling",
+          "Dynamic QR generation with configurable error correction using qr_flutter",
+          "HTTP API integration for immediate verification of scanned codes"
+        ],
+        tags: ["Flutter", "Dart", "Camera Scanner", "QR Flutter", "HTTP Client"]
+      },
+      // 6. AI-Talk-Radio (Zu-Nadi)
+      {
+        id: "ai-talk-radio",
+        name: "AI-Talk-Radio",
+        repoSlug: "Zu-Nadi/AI-Talk-Radio",
+        repoUrl: "https://github.com/Zu-Nadi/AI-Talk-Radio",
+        tagline: "Interactive Remix Talk Radio & Audio Stream Engine",
+        category: "ai",
+        categoryLabel: "AI & Audio",
+        categoryClass: "cat-ai",
+        description: "Streaming talk radio application leveraging Remix and modern web audio frameworks for dynamic spoken-audio broadcasting.",
+        highlights: [
+          "Full-stack architecture built with TypeScript and Remix",
+          "Audio streaming pipeline with low-latency playback controls",
+          "Interactive broadcast feed for synthesized audio channels"
+        ],
+        tags: ["TypeScript", "Remix", "Audio Streaming", "AI Radio"]
+      },
+      // 7. Image-to-Video-Editor (Zu-Nadi)
+      {
+        id: "image-to-video",
+        name: "Image-to-Video-Editor",
+        repoSlug: "Zu-Nadi/Image-to-Video-Editor",
+        repoUrl: "https://github.com/Zu-Nadi/Image-to-Video-Editor",
+        tagline: "Video Creation & Media Transformation Studio",
+        category: "ai",
+        categoryLabel: "AI & Multimedia",
+        categoryClass: "cat-ai",
+        description: "Studio application automating the creation of dynamic video sequences from still images with animations and transitions.",
+        highlights: [
+          "Automated keyframe sequencing and motion transitions",
+          "TypeScript pipeline for video generation and frame rendering",
+          "Export utilities for social media and mobile video formats"
+        ],
+        tags: ["TypeScript", "Video Creation", "Media Rendering", "AI Tools"]
+      },
+      // 8. Remix-Image-To-Video (Zu-Nadi)
+      {
+        id: "remix-image-video",
+        name: "Remix-Image-To-Video",
+        repoSlug: "Zu-Nadi/Remix-Image-To-Video",
+        repoUrl: "https://github.com/Zu-Nadi/Remix-Image-To-Video",
+        tagline: "Media Remixing & Creative Generative Pipeline",
+        category: "ai",
+        categoryLabel: "AI & Multimedia",
+        categoryClass: "cat-ai",
+        description: "Specialized remix engine combining image synthesis models with video transition generators.",
+        highlights: [
+          "Creative asset remixing workflow built on Remix & TypeScript",
+          "Image preprocessing and dynamic video rendering filters",
+          "Modular architecture for custom generative templates"
+        ],
+        tags: ["TypeScript", "Remix", "Generative Video", "Image Synthesis"]
+      },
+      // 9. NaviEdAdmin (Zu-Nadi)
+      {
+        id: "navied-admin",
+        name: "NaviEdAdmin Dashboard",
+        repoSlug: "Zu-Nadi/NaviEdAdmin",
+        repoUrl: "https://github.com/Zu-Nadi/NaviEdAdmin",
+        tagline: "Administrative Control Panel for NaviEd Platform",
+        category: "cloud",
+        categoryLabel: "Web & Admin",
+        categoryClass: "cat-cloud",
+        description: "Web management panel for school administrators to manage courses, campus facilities, faculty listings, and user accounts.",
+        highlights: [
+          "TypeScript web frontend with responsive dashboard layouts",
+          "Campus directory CRUD operations and role-based access control",
+          "Synchronized data feeds powering the mobile NaviEd app"
+        ],
+        tags: ["TypeScript", "Admin Panel", "Dashboard", "Role Management"]
+      },
+      // 10. NaviEdAPI (Zu-Nadi)
+      {
+        id: "navied-api",
+        name: "NaviEdAPI Service",
+        repoSlug: "Zu-Nadi/NaviEdAPI",
+        repoUrl: "https://github.com/Zu-Nadi/NaviEdAPI",
+        tagline: "Backend REST API Engine for NaviEd Ecosystem",
+        category: "cloud",
+        categoryLabel: "Backend API",
+        categoryClass: "cat-cloud",
+        description: "Central REST API service handling campus data, auth tokens, student directories, and mobile synchronization.",
+        highlights: [
+          "Robust PHP REST endpoints with token authentication",
+          "Database models supporting complex campus relationship graphs",
+          "High-throughput JSON payloads optimized for mobile client consumption"
+        ],
+        tags: ["PHP", "REST API", "Database", "Authentication", "JSON"]
+      },
+      // 11. Flutter_Screens (Zu-Nadi)
+      {
+        id: "flutter-screens",
+        name: "Flutter_Screens Library",
+        repoSlug: "Zu-Nadi/Flutter_Screens",
+        repoUrl: "https://github.com/Zu-Nadi/Flutter_Screens",
+        tagline: "Curated Reusable Mobile Screen Templates",
+        category: "mobile",
+        categoryLabel: "Flutter UI",
+        categoryClass: "cat-mobile",
+        description: "Repository of polished, production-ready Flutter screen templates, responsive layouts, and UI building blocks.",
+        highlights: [
+          "Pixel-perfect Material 3 and Cupertino screen components",
+          "Clean responsive design adapting across phones and tablets",
+          "Ready-to-integrate view models and widget structures"
+        ],
+        tags: ["Flutter", "UI Components", "Screen Templates", "Material 3"]
+      },
+      // 12. Login-Pages (Zu-Nadi)
+      {
+        id: "login-pages",
+        name: "Login-Pages Collection",
+        repoSlug: "Zu-Nadi/Login-Pages",
+        repoUrl: "https://github.com/Zu-Nadi/Login-Pages",
+        tagline: "Diverse Authentication & Onboarding UI Variations",
+        category: "mobile",
+        categoryLabel: "Flutter UI",
+        categoryClass: "cat-mobile",
+        description: "Collection of modern login, registration, and onboarding flows with various visual aesthetics and theme patterns.",
+        highlights: [
+          "Multiple visual themes: minimalist, glassmorphic, and bold brand layouts",
+          "Client-side form validation, password visibility toggles, and social login buttons",
+          "Optimized touch interactions and fluid keyboard avoiding behavior"
+        ],
+        tags: ["Flutter", "Login UI", "Onboarding", "Form Validation"]
+      },
+      // 13. Login (Zu-Nadi)
+      {
+        id: "login-auth",
+        name: "Login Auth Foundation",
+        repoSlug: "Zu-Nadi/Login",
+        repoUrl: "https://github.com/Zu-Nadi/Login",
+        tagline: "Mobile Authentication & Session Initialization",
+        category: "mobile",
+        categoryLabel: "Mobile Auth",
+        categoryClass: "cat-mobile",
+        description: "Baseline authentication boilerplate implementing clean input validation, session tracking, and credential storage.",
+        highlights: [
+          "Form field state validation patterns and error feedback",
+          "Token storage foundation and session restoration",
+          "Cross-platform support for iOS and Android"
+        ],
+        tags: ["Flutter", "Authentication", "Security", "Form State"]
+      },
+      // 14. Unum-Agent (Zu-Nadi)
+      {
+        id: "unum-agent",
+        name: "Unum-Agent",
+        repoSlug: "Zu-Nadi/Unum-Agent",
+        repoUrl: "https://github.com/Zu-Nadi/Unum-Agent",
+        tagline: "Autonomous Agent Runtime & Frame Integration",
+        category: "ai",
+        categoryLabel: "AI & Agents",
+        categoryClass: "cat-ai",
+        description: "Autonomous software engineering agent runtime implementing the Unum memory frame and deterministic task cycles.",
+        highlights: [
+          "Deterministic state verification and memory persistence",
+          "Task boundaries enforcing strict execution permissions",
+          "Living documentation integration for code generation"
+        ],
+        tags: ["Unum Frame", "Autonomous Agent", "AI SDLC", "State Machine"]
+      },
+      // 15. ZuKok Persistent Brain (mss-zu)
+      {
+        id: "zukok-brain",
+        name: "ZuKok Persistent Brain",
+        repoSlug: "mss-zu/ZuKok",
+        repoUrl: "https://github.com/mss-zu/ZuKok",
+        tagline: "Autonomous Development Steering Architecture",
+        category: "ai",
+        categoryLabel: "System Architecture",
+        categoryClass: "cat-ai",
+        description: "Autonomous software engineering brain and persistent development memory architecture based on Unum frame.",
+        highlights: [
+          "Deterministic state machines and durable memory checkpointing",
+          "Mechanical verification rule: automated test/lint verification before claims",
+          "Strict separation between steering leadership and worker execution"
+        ],
+        tags: ["Autonomous SDLC", "Unum Frame", "State Machines", "Memory Architecture"]
+      },
+      // 16. agent_control (mss-zu)
+      {
+        id: "agent-control",
+        name: "agent_control Center",
+        repoSlug: "mss-zu/agent_control",
+        repoUrl: "https://github.com/mss-zu/agent_control",
+        tagline: "Multi-Agent Workflow Orchestration & Boundary Control",
+        category: "ai",
+        categoryLabel: "System Architecture",
+        categoryClass: "cat-ai",
+        description: "Control framework orchestrating development loops, enforcing environment boundaries, and managing multi-step task execution.",
+        highlights: [
+          "Lifecycle gates validating code before stage progression",
+          "Automated boundary enforcement and permission fences",
+          "Mechanical audit tracking and durable change logs"
+        ],
+        tags: ["Agent Control", "Automation", "SDLC", "Orchestration"]
+      },
+      // 17. AI_Brain (mss-zu)
+      {
+        id: "ai-brain",
+        name: "AI_Brain Knowledge Base",
+        repoSlug: "mss-zu/AI_Brain",
+        repoUrl: "https://github.com/mss-zu/AI_Brain",
+        tagline: "Durable Knowledge Sync & Living Documentation",
+        category: "ai",
+        categoryLabel: "System Architecture",
+        categoryClass: "cat-ai",
+        description: "Knowledge store managing living architectural truths, project state indices, and multi-union references.",
+        highlights: [
+          "Modular markdown-driven knowledge ingest pipeline",
+          "Durable living truth sync across multi-project environments",
+          "Strict separation between project memory and working code"
+        ],
+        tags: ["Knowledge Engine", "System Memory", "Living Truths"]
+      },
+      // 18. test_codemagic (mss-zu)
+      {
+        id: "test-codemagic",
+        name: "test_codemagic CI/CD Pipeline",
+        repoSlug: "mss-zu/test_codemagic",
+        repoUrl: "https://github.com/mss-zu/test_codemagic",
+        tagline: "Cloud Build, Test, and Packaging Automation",
+        category: "tool",
+        categoryLabel: "DevOps & CI/CD",
+        categoryClass: "cat-tool",
+        description: "Continuous integration and deployment automation pipeline configured for Flutter builds, testing, and multi-platform packaging.",
+        highlights: [
+          "Automated test execution on pull requests",
+          "Keystore signing and Android App Bundle (AAB) packaging",
+          "Hands-free multi-platform distribution configuration"
+        ],
+        tags: ["CI/CD", "Codemagic", "Flutter Build", "DevOps", "Packaging"]
+      },
+      // 19. Ankido-project (Zu-Nadi)
+      {
+        id: "ankido-project",
+        name: "Ankido-project",
+        repoSlug: "Zu-Nadi/Ankido-project",
+        repoUrl: "https://github.com/Zu-Nadi/Ankido-project",
+        tagline: "Specialized Software Application Project",
+        category: "tool",
+        categoryLabel: "Project Workspace",
+        categoryClass: "cat-tool",
+        description: "Application repository exploring modular component structures and system data flows.",
+        highlights: [
+          "Structured codebase organization and modular design",
+          "Independent workspace configuration"
+        ],
+        tags: ["Modular Design", "App Workspace", "Clean Architecture"]
+      },
+      // 20. hello_git, LessonOne & first-test (Zu-Nadi)
+      {
+        id: "dev-baselines",
+        name: "Development Baselines (hello_git, LessonOne)",
+        repoSlug: "Zu-Nadi/hello_git",
+        repoUrl: "https://github.com/Zu-Nadi/hello_git",
+        tagline: "Git Version Control & Core Programming Foundations",
+        category: "tool",
+        categoryLabel: "Developer Baseline",
+        categoryClass: "cat-tool",
+        description: "Foundational repositories (hello_git, LessonOne, first-test) tracking software development exercises, Git branching, and algorithmic foundations.",
+        highlights: [
+          "Version control baseline setup and branch tracking",
+          "Fundamental logic and object-oriented structure exercises",
+          "Continuous progress tracking from early projects to advanced architectures"
+        ],
+        tags: ["Git", "Baselines", "Version Control", "Fundamentals"]
+      },
+      // 21. EDUplus Guardian App (Production Ecosystem)
+      {
+        id: "eduplus-guardian",
+        name: "EDUplus Guardian App",
+        repoSlug: "Production Ecosystem",
+        repoUrl: "https://github.com/Zu-Nadi",
+        tagline: "Parent Portal with Avocado Green Theming & FCM Chat",
+        category: "mobile",
+        categoryLabel: "Production Ecosystem",
+        categoryClass: "cat-mobile",
+        description: "Enterprise school portal allowing guardians to track attendance in real time, view announcements, and chat with teachers.",
+        highlights: [
+          "Custom school domain dynamic theming with clean style isolation (Avocado Green)",
+          "Real-time local chat push notifications via FCM",
+          "Signed production Android App Bundle (app-release.aab) build"
+        ],
+        tags: ["Flutter", "FCM Push", "Custom Theming", "Real-Time Chat", "Android AAB"]
+      }
+    ];
+
+    const container = document.getElementById("projectsContainer");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const searchInput = document.getElementById("searchInput");
+    const projectCountEl = document.getElementById("projectCount");
+    const totalTabCountEl = document.getElementById("totalTabCount");
+
+    if (projectCountEl) projectCountEl.textContent = `${projects.length}`;
+    if (totalTabCountEl) totalTabCountEl.textContent = `${projects.length}`;
+
+    let currentFilter = "all";
+    let searchQuery = "";
+
+    function renderProjects() {
+      container.innerHTML = "";
+      
+      const filtered = projects.filter(p => {
+        const matchesFilter = (currentFilter === "all") || (p.category === currentFilter);
+        const matchesSearch = !searchQuery || 
+          p.name.toLowerCase().includes(searchQuery) ||
+          p.tagline.toLowerCase().includes(searchQuery) ||
+          p.repoSlug.toLowerCase().includes(searchQuery) ||
+          p.description.toLowerCase().includes(searchQuery) ||
+          p.tags.some(t => t.toLowerCase().includes(searchQuery));
+        return matchesFilter && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--text-muted);">
+            <p style="font-size: 1.1rem; margin-bottom: 8px;">No matching repositories found.</p>
+            <p style="font-size: 0.88rem;">Try searching for a different keyword like "Flutter", "Kotlin", "FCM", "AI", or select "All Repositories".</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "project-card";
+        
+        const highlightsHtml = p.highlights.map(h => `<li>${h}</li>`).join("");
+        const tagsHtml = p.tags.map(t => `<span class="tech-tag">${t}</span>`).join("");
+
+        card.innerHTML = `
+          <div class="project-top">
+            <span class="category-badge ${p.categoryClass}">${p.categoryLabel}</span>
+            <a href="${p.repoUrl}" target="_blank" rel="noopener noreferrer" class="project-repo-link" title="Open repository: ${p.repoSlug}">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              ${p.repoSlug}
+            </a>
+          </div>
+          <div class="project-name">${p.name}</div>
+          <div class="project-tagline">${p.tagline}</div>
+          <div class="project-desc">${p.description}</div>
+          <div class="project-highlights">
+            <strong>Key Highlights & Architecture:</strong>
+            <ul>${highlightsHtml}</ul>
+          </div>
+          <div class="project-tags">
+            ${tagsHtml}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Filter clicks
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentFilter = btn.getAttribute("data-filter");
+        renderProjects();
+      });
+    });
+
+    // Search input
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      renderProjects();
+    });
+
+    // Initial render
+    renderProjects();
+  </script>
+</body>
+</html>
